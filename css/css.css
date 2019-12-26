@@ -1,0 +1,73 @@
+body{
+    background: rgb(86, 167, 242); /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top , rgb(255, 253, 248), rgb(46, 154, 255));  /*Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient( rgb(1, 162, 255),rgb(255, 252, 244)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bg-tran{
+    background: transparent;
+}
+
+.bg-glass{
+    background: rgba(255,255,255,0.3);
+}
+
+*{
+    font-family: "Microsoft JhengHei";
+}
+#dialog{
+    font-size: 16px;
+    font-weight: 800 !important;
+}
+
+.btn{
+    text-align: left !important;
+    padding:0 1px 0 0  ;
+}
+
+.tooltip-inner{
+    background: rgba(0,0,255,0.5);
+}
+
+.bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^="top"] .arrow::before {
+    border-top-color: rgba(0,0,255,0.5)
+  }
+
+path{
+    transition: all 0.5s;
+}
+
+#top path:hover{
+    fill: #e255e2;
+    transform: translateY(-8px);
+}
+live{
+      fill: #e2a5e2; 
+}
+.text-gray-dark{
+    color:#343a40;
+    font-size:24px;
+}
+::-webkit-scrollbar {
+    width: 15px;
+    transition: all 0.5s;
+}
+:-webkit-scrollbar-track {
+    background-color:rgba(255,255,255,0);
+} /* the new scrollbar will have a flat appearance with the set background color */
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); 
+    border-radius:10px;
+} /* this will style the thumb, ignoring the track */
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.4); 
+} /* this will style the thumb, ignoring the track */
+
+/* ::-webkit-scrollbar-button {
+} optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
