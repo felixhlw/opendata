@@ -438,8 +438,8 @@
                 <div class="col-7 mt-5 px-0 bounceInDown wow" style="height:620px;border-radius:0px; ">
                     <div class="box bg-glass text-gray-dark p-0" style="overflow: hidden;">
                         <div class="px-3 py-2 my-0 text-white board">活動看板</div>
-                        <div style="overflow:auto; height:550px; border-radius:0px" >
-                            <div class=" rounded-lg px-3 pr-0" id="dialog">
+                        <div style="overflow:scroll; height:550px; border-radius:0px" >
+                            <div class=" rounded-lg pl-3 pr-0" style="overflow:scroll;"id="dialog">
                                 <table class="table table-hover table-light">
                                     <thead class="thead-dark">
                                         <tr class="p-2">
@@ -529,26 +529,43 @@
     let windowHeight = $(window).height();
     $.ajax({
         url: "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=4",
-        type: "get",
+        type: "post",
         cache: false,
-        /* dataType: "text", */
-        dataType: "json", 
+        dataType: "json",
         // json資料
-        success: function(res) {
-        /* let data = JSON.parse(res); */
-            /* console.log(res); */
-
+        /* let data = JSON.parse(r); */
+        success: function (res) {
             res = res.map((d) => {
-                
-                if (d.showInfo[0].location.substr(0, 1) === "台") {
-                    d.showInfo[0].location = "臺" + d.showInfo[0].location.substr(1);
-
-                /* list.text(d.showInfo[0].location); */
                 console.log(d.showInfo[0].location);
+                
+                if (d.showInfo[0].locationName.substr(0, 1) === "台") {
+                    d.showInfo[0].locationName = "臺" + d.showInfo[0].locationName.substr(1)
                 }
                 return d;
             })
             data = res;
+
+            list.html(" <div style='padding:14px 0 10px 14px;' class='wow pulse animated' data-wow-iteration='infinite' data-wow-duration='2s' style='visibility: visible; animation-duration: 2s; animation-delay: 300ms; animation-iteration-count: infinite; animation-name: pulse'><h4><i class='far fa-hand-point-left '></i> 請點選地圖</h4></div>");
+
+
+/*             <div class="wow pulse animated" data-wow-delay="300ms" data-wow-iteration="infinite" data-wow-duration="2s" style="visibility: visible; animation-duration: 2s; animation-delay: 300ms; animation-iteration-count: infinite; animation-name: pulse;">
+                      <a href="https://raw.githubusercontent.com/graingert/WOW/master/LICENSE" title="MIT License" target="_blank">
+                        <img src="img/mit.svg" alt="MIT License" class="center" height="414" width="414">
+                      </a>
+                    </div> */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             let count = [];
             for (let d of data) {
@@ -570,14 +587,6 @@
             $('[data-toggle="tooltip"]').tooltip()
         }
     })
-
-
-
-            /* list.html(" <div style='padding:14px 0 10px 14px;'> 請點選地圖</div>"); */
-            /* list.html(" <div style='padding:14px 0 10px 14px;'><h5><i class='far fa-hand-point-left'></i> 請點選地圖</h5></div>"); */
-             list.html(" <div style='padding:14px 0 10px 14px;' class='wow pulse animated' data-wow-iteration='infinite' data-wow-duration='2s' style='visibility: visible; animation-duration: 2s; animation-delay: 300ms; animation-iteration-count: infinite; animation-name: pulse'><h6><i class='far fa-hand-point-left '></i> 請點選地圖</h6></div>"); 
-
-
 
     $("path").click(function () {
         list.text("載入中...");

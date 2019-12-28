@@ -2,6 +2,9 @@ body{
     background: rgb(86, 167, 242); /* fallback for old browsers */
     background: -webkit-linear-gradient(to top , rgb(255, 253, 248), rgb(46, 154, 255));  /*Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient( rgb(1, 162, 255),rgb(255, 252, 244)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .bg-tran{
@@ -11,18 +14,98 @@ body{
 .bg-glass{
     background: rgba(255,255,255,0.3);
 }
+li{
+    
+    margin-left: 20px;
+}
 
 *{
     font-family: "Microsoft JhengHei";
 }
+a {
+    word-break: break-all;
+    word-wrap: break-word;
+  }
+ 
+  img {
+    display: table-cell;
+    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: calc(50% - 25px);
+    
+/*     margin-left: auto;
+    margin-right: auto; */
+  }
+
+
+#modal{
+    white-space:normal;
+}  
+#content {
+    /* 100vh - nav高 - footer高 */
+    min-height: calc(100vh - 70px - 200px)
+}
+#content, #footer {
+    display: none;
+}
+#loading {
+    height: 100vh;
+    position: fixed;
+    z-index: 999;
+}
+.box{
+    border-radius: 15px !important;
+    overflow: hidden !important;
+    height: 610px;
+
+}
+.board{
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(0,140,10,0.8));
+    border-radius: 15px 15px 0 0;
+    width: 100%; 
+    display: block;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.4) ;
+    position: relative;
+    z-index: 998;
+    
+}
+#list{
+    z-index: initial !important;
+}
+.table-light, .table-light>td, .table-light>th {
+    width: 100%; 
+    position: relative;
+    background-color: rgba(255,255,255,0.8);
+/*     line-height: 50px; */
+    overflow: auto;
+    border-radius: 0 0 15px 15px !important;
+    transition: all 0.5s;
+}
+.table td{
+    padding: 0px 0 0 0px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.table tr{
+    padding: 0px;
+    margin: auto;
+    display: table;
+    overflow: hidden;
+    
+}
+
 #dialog{
     font-size: 16px;
     font-weight: 800 !important;
+    position: relative;
+    opacity: 0.9;
+    /* border-radius: 15px; */
 }
+.item{
+    line-height: 52px;
+    padding: 0 px;    
 
-.btn{
-    text-align: left !important;
-    padding:0 1px 0 0  ;
 }
 
 .tooltip-inner{
@@ -41,9 +124,7 @@ path{
     fill: #e255e2;
     transform: translateY(-8px);
 }
-live{
-      fill: #e2a5e2; 
-}
+
 .text-gray-dark{
     color:#343a40;
     font-size:24px;
@@ -71,3 +152,32 @@ live{
 ::-webkit-scrollbar-corner {
     background-color: transparent;
 } /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+
+@media (max-width: 575.98px) {
+    #content {
+        /* 100vh - nav高 - footer高 */
+        min-height: calc(100vh - 70px - 73px)
+    }
+}
+
+ /* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    #content {
+        /* 100vh - nav高 - footer高 */
+        min-height: calc(100vh - 70px - 85px) 
+    }
+}
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    #content {
+        /* 100vh - nav高 - footer高 */
+        min-height: calc(100vh - 70px - 153px)
+     }
+}
+ /* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    #content {
+        /* 100vh - nav高 - footer高 */
+        min-height: calc(100vh - 70px - 180px)
+    }
+}
