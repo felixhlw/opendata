@@ -490,7 +490,7 @@
         <!-- 頁尾區 -->
         <div class="slideInUp wow" style="margin-top: -0px;" id="footer">
             <div><img src="./images/bg.svg" alt="" width="100%" height="60%"></div>
-            <div class="container-fluid bg-primary text-white text-center py-1 ">
+            <div class="container-fluid bg-primary text-white text-center py-2 ">
                 <div class="row">
                     <div class="col-12">
                         <h5> &copy; <script>
@@ -513,7 +513,10 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <img src="" class="w-75 img-responsive center-block">
+                        
+                        <img src="" class="w-75 img-responsive center-block"><br>
+                        <fieldset class="px-3 pb-4 pt-4 mt-0 mb-3">
+                            <legend>活動資訊</legend>
                         <h6>
                         <br>
                             <i class="far fa-calendar-alt text-primary"></i> 活動期間:
@@ -521,7 +524,7 @@
                             <span></span>
                         <h6>
                             <br>
-                            <i class="fas fa-theater-masks text-danger"></i> 活動資訊:
+                            <i class="fas fa-theater-masks text-danger"></i> 活動介紹:
                         </h6>
                             <span></span>
                         <h6>
@@ -539,6 +542,7 @@
                             <i class="fas fa-desktop"></i> 活動官網:
                         </h6>
                             <span></span>
+                        </fieldset>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">關閉</button>
@@ -681,7 +685,7 @@
 
             }
         }
-        if (!has) list.html(" <div style='padding:14px 0 10px 14px;' class=' wow flash animated' data-wow-iteration='infinite' data-wow-duration='3s' style='visibility: visible; animation-duration: 1s; animation-delay: 13000ms; animation-iteration-count: infinite; animation-name: flash'><h6><i class='far fa-grin-squint-tears'></i> " + $(this).attr('id')+ "暫無活動資料喔~</h6></div>");
+        if (!has) list.html(" <div style='padding:14px 0 10px 14px;' class=' wow flash animated' data-wow-iteration='infinite' data-wow-duration='3s' style='visibility: visible; animation-duration: 1s; animation-delay: 13000ms; animation-iteration-count: infinite; animation-name: flash'><h6 class='text-danger' ><i class='far fa-grin-squint-tears'></i> " + $(this).attr('id')+ "暫無活動資料喔~</h6></div>");
     })
 
 
