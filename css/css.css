@@ -107,7 +107,7 @@ a {
     /* 100vh - nav高 - footer高 */
     min-height: calc(100vh - 70px - 190px)
 }
-#content, #footer {
+#navbar,  #content, #footer {
     display: none;
 }
 

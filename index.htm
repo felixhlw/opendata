@@ -54,7 +54,7 @@
 
 <body>
     <div style="height: 100vh;">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-success border-bottom border-success shadow">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success border-bottom border-success shadow slideInDown wow" id="navbar">
             <div class="container">
                 <a class="navbar-brand " href="index.htm"><img src="./images/balloons.png" width="30" height="30"
                         class="d-inline-block align-top mt-1" alt=""> 親子活動 資訊站</a>  <a href="https://data.gov.tw/" class="text-white" target="_blank"> <span><i class="fas fa-book-open"></i> 資料來源: 政府資料開放平台</span></a>
@@ -462,7 +462,7 @@
                 </div>
 
                 <!-- 列表 -->
-                <div class="col-7 mt-5 px-0 bounceInDown wow" style="height:620px;">
+                <div class="col-7 mt-5 px-0 bounceInRight wow" style="height:620px;">
                     
                     <div class="box bg-glass text-gray-dark p-0" style="overflow: hidden;">
                         <div class="px-3 py-2 my-0 text-white board">活動看板</div>
@@ -687,6 +687,7 @@
 
     $(window).on('load', function () {
         $("#loading").fadeOut(2000, function () {
+            $("#navbar").fadeIn();
             $("#content").fadeIn();
             $("#footer").fadeIn();
             $("#particles").show();
