@@ -33,27 +33,69 @@ a {
     margin-top: auto;
     margin-bottom: auto;
     top: calc(50% - 25px);
-    
 /*     margin-left: auto;
     margin-right: auto; */
   }
+  #loading {
+    height: 100vh;
+    position: fixed;
+    top:0 ;
+    left: 0;
+    z-index: 999;
+}
+
+.label{
+    position: relative;
+    z-index: initial;
+}
+.map{
+    position: relative;
+    z-index: 0;
+    filter: drop-shadow(rgba(0,0,0,0.5) 5px 0 3px); 
+}
+.labeltop{
+    width: 450px;
+    position: absolute;
+    display: block;
+    /* background: #c0df8e; */
+    background: linear-gradient(to right, rgb(204, 230, 136),rgba(192, 223, 142, 0));
+    border: solid 0px gray;
+    top: 640px;
+    left: 0;
+    font-weight: bolder;
+    z-index: -10;
+}
+.labeltop2{
+    width: 450px;
+    position: absolute;
+    display: block;
+    /* background: #5dc47a; */
+    background: linear-gradient(to right, rgba(93,196,122,1),rgba(93,196,122,0));
+    border: solid 0px gray;
+    top: 600px;
+    left: 0;
+    font-weight: bolder;
+    z-index: -10;
+}
+
 
 
 #modal{
     white-space:normal;
-}  
+} 
+#modal h5, h6{ 
+    font-weight: 800 !important;
+    color: rgb(58, 81, 133) !important;
+} 
+
 #content {
     /* 100vh - nav高 - footer高 */
-    min-height: calc(100vh - 70px - 200px)
+    min-height: calc(100vh - 70px - 190px)
 }
 #content, #footer {
     display: none;
 }
-#loading {
-    height: 100vh;
-    position: fixed;
-    z-index: 999;
-}
+
 .box{
     border-radius: 15px !important;
     overflow: hidden !important;
@@ -71,15 +113,29 @@ a {
     
 }
 #list{
+
+    
     z-index: initial !important;
 }
+
+#list>tr:not(:last-child) {
+        border: 1px dashed rgb(135, 168, 212); border-top: none; border-left: none; border-right: none;
+        /* color: red !important; */
+      }
+
+
+#list h5, h6{ 
+    font-weight: 800 !important;
+    color: rgb(58, 81, 133) !important;
+} 
+
 .table-light, .table-light>td, .table-light>th {
     width: 100%; 
     position: relative;
     background-color: rgba(255,255,255,0.8);
 /*     line-height: 50px; */
     overflow: auto;
-    border-radius: 0 0 15px 15px !important;
+    border-radius: 0 0 10px 10px !important;
     transition: all 0.5s;
 }
 .table td{
@@ -118,6 +174,7 @@ a {
 
 path{
     transition: all 0.5s;
+    cursor: pointer;
 }
 
 #top path:hover{
